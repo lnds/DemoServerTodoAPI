@@ -94,17 +94,17 @@ Se podría agrupar los endpoints en los siguientes microservicios para las 2 ár
 
 la convención de nombres y la semántica de las rutas en una API REST convencional, se utiliza una estructura de rutas que refleja los recursos y las acciones sobre esos recursos. Los nombres de las rutas y los verbos HTTP utilizados se alinean con las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre los recursos. Por ejemplo:
 
-POST /users: Crear un nuevo usuario.
-GET /users/:id: Obtener un usuario por su ID.
-PUT /users/:id: Actualizar un usuario por su ID.
-DELETE /users/:id: Eliminar un usuario por su ID.
+- POST /users: Crear un nuevo usuario.
+- GET /users/:id: Obtener un usuario por su ID.
+- PUT /users/:id: Actualizar un usuario por su ID.
+- DELETE /users/:id: Eliminar un usuario por su ID.
 
 Sin embargo, en tu esta implementación actual, los nombres de las rutas no siguen esta convención estándar.
 
-/register: Registro de usuarios (Esto debería ser POST /users).
-/login: Autenticación de usuarios (Esto podría ser POST /login).
-/users: Listado de todos los usuarios (Esto podría ser GET /users).
-/verify: Validación de token (Esto podría ser GET /verify o incluso POST /verify si se utiliza para renovar tokens).
+- /register: Registro de usuarios (Esto debería ser POST /users).
+- /login: Autenticación de usuarios (Esto podría ser POST /login).
+- /users: Listado de todos los usuarios (Esto podría ser GET /users).
+- /verify: Validación de token (Esto podría ser GET /verify o incluso POST /verify si se utiliza para renovar tokens).
    
 # Opcional
 
