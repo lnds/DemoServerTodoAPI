@@ -1,5 +1,7 @@
 # Tarea 1: REST
 
+INTEGRANTES: Jazna Meza y Ricardo Pino
+
 Haga un fork de este repositorio.
 
 # Preparación
@@ -74,8 +76,10 @@ Cuando haya realizado las modificaciones pruébelas con YARC, conteste las pregu
 # Preguntas
 
 1. ¿En cuantos micro servicios podría descomponer (o agrupar) los endpoints contenidos en el archivo `index.js`?
-2. ¿Qué problema tienen los endpoints de gestión de usuarios con respecto a la forma estándar de organizar las APIs REST?
+   En dos micro servicios entre lo cuales se tiene Usuarios y Tareas
 
+4. ¿Qué problema tienen los endpoints de gestión de usuarios con respecto a la forma estándar de organizar las APIs REST?
+Dada la codificación actual, todos los métodos descritos se desarrollan con solo una APIs REST, esto transgrede el principio de bajo acoplamiento y alta cohesión del diseño modular. Bajo esta situación se recomienda crear una APIs REST por cada dominio (USUARIOS y TAREAS) de esta manera se facilitaría el principio de diseño modular teniendo un bajo acoplamiento y una alta cohesión. 
    
 # Opcional
 
