@@ -76,7 +76,43 @@ Cuando haya realizado las modificaciones pruébelas con YARC, conteste las pregu
 1. ¿En cuantos micro servicios podría descomponer (o agrupar) los endpoints contenidos en el archivo `index.js`?
 2. ¿Qué problema tienen los endpoints de gestión de usuarios con respecto a la forma estándar de organizar las APIs REST?
 
-   
+# Respuestas
+1.
+a) Autenticación y Registro de Usuarios:
+
+/register: Para registrar nuevos usuarios.
+/login: Para autenticar a los usuarios.
+/verify: Para validar un token JWT (autenticación).
+
+Estos endpoints están relacionados con la autenticación y gestión de usuarios y podrían agruparse en un microservicio de "Autenticación y Usuarios".
+
+b) Gestión de Todos:
+
+/todos: Para crear y listar tareas de usuario.
+/todos/:id: Para obtener, actualizar y eliminar tareas específicas.
+
+Estos endpoints están relacionados con la gestión de tareas de usuario y podrían agruparse en un microservicio de "Gestión de Tareas".
+
+c) Documentación Swagger:
+
+/doc: Para servir la documentación Swagger de la API.
+La documentación Swagger es independiente de las funcionalidades principales y podría estar en su propio microservicio de "Documentación".
+
+2.
+Los problemas en los endpoints de gestión de usuarios son los siguientes:
+
+Endpoint /register:
+
+El endpoint de registro de usuarios debería seguir una convención más estándar, como POST /users, donde /users representa el recurso de usuarios y POST se usa para crear uno nuevo. Esto hace que la API sea más intuitiva y coherente.
+
+Endpoint /login:
+
+El endpoint de inicio de sesión también podría beneficiarse de una convención más estándar, como POST /users/login. Al seguir esta convención, los desarrolladores sabrán que están iniciando sesión en la entidad de usuario.
+
+Endpoint /users:
+
+Aunque este endpoint se encarga de listar todos los usuarios, su nombre sugiere que podría ser utilizado para crear un nuevo usuario (GET para obtener una lista de usuarios). Para listar usuarios, sería más apropiado usar una ruta como GET /users.
+
 # Opcional
 
 Cree otro ReplIT a partir de este repositorio: https://github.com/lnds/DemoTodoAppReactClient.
