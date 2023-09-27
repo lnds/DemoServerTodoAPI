@@ -114,6 +114,7 @@ Endpoint /users:
 Aunque este endpoint se encarga de listar todos los usuarios, su nombre sugiere que podría ser utilizado para crear un nuevo usuario (GET para obtener una lista de usuarios). Para listar usuarios, sería más apropiado usar una ruta como GET /users.
 
 Integrantes:
+- Felix Cifuentes Cid.
 - Ignacio J. González P.
 
 # Opcional
