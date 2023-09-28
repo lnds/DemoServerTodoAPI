@@ -1,3 +1,19 @@
+# Integrantes:
+-Carlos Correa
+-Juan Hernandez
+-Fernando Sepúlveda
+-Sebastián Blanco.
+
+# Respuestas:
+1.- La decisión de cuántos microservicios utilizar para una aplicación nativa en la nube depende de varios factores y no se basa únicamente en el número de endpoints. en este caso particular lo separaríamos en 2 microservicios, uno para usuarios y otro para las tareas.
+
+2.- Los endpoints de gestión de usuarios en una aplicación nativa en la nube pueden enfrentar varios problemas con respecto a la forma estándar de organizar las API REST. Como, por ejemplo.
+Escalabilidad y rendimiento: en una arquitectura REST estándar, los puntos finales suelen estar agrupados bajo recursos como /usuarios. Esto puede generar problemas de escalabilidad y rendimiento si la aplicación tiene un gran número de usuarios o un alto tráfico. Cada solicitud a /usuariospodría afectar a todos los usuarios, lo que podría resultar en cuellos de botella y un rendimiento deficiente.
+Duplicación de Funcionalidad: En una API REST estándar, es posible que debas implementar funciones de gestión de usuarios en Múltiples lugares si tienes diferentes partes de tu aplicación que requieren autenticación y acceso a perfiles de usuario. Esto puede llevar a la duplicación de código ya la falta de coherencia en la gestión de usuarios.
+Dificultad en la Evolución: La gestión de usuarios es una funcionalidad que puede evolucionar con el tiempo. Puedes necesitar agregar nuevas características, como autenticación de dos factores o integración con proveedores de identidad externos. En una arquitectura REST estándar, estos cambios pueden ser complicados y afectar a toda la API.
+
+Entre otras.
+
 # Tarea 1: REST
 
 Haga un fork de este repositorio.
