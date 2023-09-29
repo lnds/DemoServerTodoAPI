@@ -1,0 +1,12 @@
+1.- ¿En cuantos micro servicios podría descomponer (o agrupar) los endpoints contenidos en el archivo index.js?
+
+ 1 micro servicio para usuarios
+ 1 micro servicio para todos
+
+
+¿Qué problema tienen los endpoints de gestión de usuarios con respecto a la forma estándar de organizar las APIs REST?
+
+Los path deberían ser:
+   *  para registrar un usuario /users/register 
+   *  para obtener un token /users/login 
+   *  para validar el token deberia ser /users/verify
