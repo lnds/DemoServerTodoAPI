@@ -182,7 +182,7 @@ app.post("/todos", authorization, async (req, res) => {
   }
 })
 
-//list all todos
+//list all todos1
 app.get("/todos", authorization, async (req, res) => {
   // #swagger.description = 'Endpoint para listar todas las tareas que pertenecen al usuario registrado en el token de sesión'
   try {
