@@ -74,8 +74,12 @@ Cuando haya realizado las modificaciones pruébelas con YARC, conteste las pregu
 # Preguntas
 
 1. ¿En cuantos micro servicios podría descomponer (o agrupar) los endpoints contenidos en el archivo `index.js`?
+
+  Autentificacion y tareas.
+
 2. ¿Qué problema tienen los endpoints de gestión de usuarios con respecto a la forma estándar de organizar las APIs REST?
 
+  Que las solicitudes originales no eran GET, POST, PUT y DELETE de una API REST. Y ademas los enlaces no son descriptibles.
    
 # Opcional
 
