@@ -1,5 +1,7 @@
 # Tarea 1: REST
 
+Marco Aguilar - Rocío Contreras Águila
+
 Haga un fork de este repositorio.
 
 # Preparación
