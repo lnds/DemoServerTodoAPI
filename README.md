@@ -74,8 +74,11 @@ Cuando haya realizado las modificaciones pruébelas con YARC, conteste las pregu
 # Preguntas
 
 1. ¿En cuantos micro servicios podría descomponer (o agrupar) los endpoints contenidos en el archivo `index.js`?
-2. ¿Qué problema tienen los endpoints de gestión de usuarios con respecto a la forma estándar de organizar las APIs REST?
-
+   Se puede descomponer en 3 microservicios:
+    1. Manejo de usuarios
+   2. Manejo de tareas
+3. ¿Qué problema tienen los endpoints de gestión de usuarios con respecto a la forma estándar de organizar las APIs REST?
+ Los endopints son utilizados para generar CRUDS, el manejo de usuarios no es parte de un CRUD como lo es el manejo de todos
    
 # Opcional
 
