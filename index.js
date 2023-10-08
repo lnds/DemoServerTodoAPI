@@ -6,6 +6,7 @@ const app = express()
 const cors = require("cors")
 const pool = require("./db")
 const { PORT, JWT_SECRET } = require('./config')
+console.log("Configuración PORT:", PORT);
 
 //middleware
 app.use(cors())
@@ -83,7 +84,7 @@ app.post("/register", async (req, res) => {
 })
 
 // verificar usuario
-app.options("/login", async (req, res) => {
+app.post("/login", async (req, res) => {
   // #swagger.description = 'Endpoint para obtener un token de sesión para el usuario'
   try {
     // 1. destructurizar req.body
@@ -114,7 +115,7 @@ app.options("/login", async (req, res) => {
 })
 
 // List all users
-app.options("/users", async (req, res) => {
+app.get("/users", async (req, res) => {
   // #swagger.description = 'Endpoint para listar todos los usuarios registrados en el sistema'
   try {
     const allUsers = await pool.query(
@@ -167,7 +168,7 @@ app.get("/verify", authorization, async (req, res) => {
 // EL EJERCICIO EMPIEZA DESDE ESTE PUNTO
 
 // create a todo
-app.options("/todos", authorization, async (req, res) => {
+app.post("/todos", authorization, async (req, res) => {
   // #swagger.description = 'Endpoint para crear una tarea, pertenece al usuario registrado en el token de sesión'
   try {
     const { description } = req.body
@@ -183,7 +184,7 @@ app.options("/todos", authorization, async (req, res) => {
 })
 
 //list all todos
-app.options("/todos", authorization, async (req, res) => {
+app.get("/todos", authorization, async (req, res) => {
   // #swagger.description = 'Endpoint para listar todas las tareas que pertenecen al usuario registrado en el token de sesión'
   try {
     const allTodos = await pool.query(
@@ -198,7 +199,7 @@ app.options("/todos", authorization, async (req, res) => {
 })
 
 // retrieve a todo by id
-app.options("/todos/:id", authorization, async (req, res) => {
+app.get("/todos/:id", authorization, async (req, res) => {
   // #swagger.description = 'Endpoint para obtener una tarea especifica y que pertenezca al usuario registrado en el token de sesión'
   try {
     const { id } = req.params
@@ -214,7 +215,7 @@ app.options("/todos/:id", authorization, async (req, res) => {
 })
 
 // update a todo
-app.options("/todos/:id", authorization, async (req, res) => {
+app.put("/todos/:id", authorization, async (req, res) => {
   // #swagger.description = 'Endpoint para actualizar la descripción de una tarea especifica y que pertenezca al usuario registrado en el token de sesión'
   try {
     const { id } = req.params
@@ -232,7 +233,7 @@ app.options("/todos/:id", authorization, async (req, res) => {
 })
 
 //delete a todo
-app.options("/todos/:id", authorization, async (req, res) => {
+app.delete("/todos/:id", authorization, async (req, res) => {
   // #swagger.description = 'Endpoint para borrar una tarea especifica y que pertenezca al usuario registrado en el token de sesión'
   try {
     const { id } = req.params
@@ -249,6 +250,15 @@ app.options("/todos/:id", authorization, async (req, res) => {
 })
 
 
-app.listen(PORT, () => {
-  console.log("servidor iniciado en puerto " + PORT)
-})
+app.listen(PORT || 3000, () => {
+  console.log("servidor iniciado en puerto " + (PORT || 3000));
+});
+
+app.get('/', (req, res) => {
+  res.send('Servidor funcionando correctamente');
+});
+
+app.get('/users', (req, res) => {
+  console.log("Accediendo a /users");
+  // ... tu código
+});
