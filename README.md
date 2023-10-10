@@ -74,8 +74,10 @@ Cuando haya realizado las modificaciones pruébelas con YARC, conteste las pregu
 # Preguntas
 
 1. ¿En cuantos micro servicios podría descomponer (o agrupar) los endpoints contenidos en el archivo `index.js`?
-2. ¿Qué problema tienen los endpoints de gestión de usuarios con respecto a la forma estándar de organizar las APIs REST?
+R.Los 9 endpoints se pueden agrupar en dos categorías de microservicios, usuarios y tareas.
 
+2. ¿Qué problema tienen los endpoints de gestión de usuarios con respecto a la forma estándar de organizar las APIs REST?
+R. En los endpoints login, register y user, se usa el método POST en el para buscar un dato que está en la base de datos. En el del login caso se crea un token con JWT. En estos casos se pueden usar Secrets para gestionar las variables de entorno.
    
 # Opcional
 
